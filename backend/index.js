@@ -11,6 +11,7 @@ import path from 'path'
 import { fileURLToPath } from 'url';
 import { addToCart, getCart, removeFromCart } from './controller/cartControllser.js'
 import { authMiddleware } from './middlewares/auth.js'
+import placeOrder from './controller/orderController.js'
 
 const app = express()
 const __filename = fileURLToPath(import.meta.url);
@@ -49,6 +50,8 @@ app.post('/addToCart', authMiddleware, addToCart);
 app.post('/removeFromCart', authMiddleware, removeFromCart)
 app.post('/getCart', authMiddleware, getCart)
 
+//PlaceOrder
+app.post("/placeOrder", authMiddleware, placeOrder)
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`App running on port http://localhost:${PORT}`)
