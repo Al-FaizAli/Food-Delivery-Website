@@ -7,7 +7,7 @@ ul {
     gap: 5vw;
     background-color: rgb(247, 243, 239);
     color: rgb(0, 0, 0);
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0px;
 }
@@ -31,7 +31,7 @@ ul li {
 }
 
 ul li:hover {
-    transform: scale(0.85);
+    /* transform: scale(0.85); */
 }
 
 .name {

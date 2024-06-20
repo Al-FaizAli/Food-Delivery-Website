@@ -1,0 +1,26 @@
+.placeorder{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width:900px) {
+    .placeorder{
+        flex-direction: column;
+    }
+}
+.placeorder form {
+    width: 100%;
+    max-width: max(30%, 500px);
+}
+
+.placeorder form input {
+    width: 100%;
+    margin:10px 0;
+    padding: 10px;
+}
+.inputs{
+    display: flex;
+    gap:10px;
+}

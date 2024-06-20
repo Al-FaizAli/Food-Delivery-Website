@@ -17,6 +17,7 @@
   border-bottom: 2px solid #000;
   text-align: center;
   margin-right: 3%;
+  font-size: xx-large;
 }
 
 .cart-table {
@@ -27,7 +28,8 @@
   width: 80%;
   padding: 1vw 0;
   border-bottom: 1px solid #ccc;
-  text-align: center;
+  /* text-align: center; */
+  font-size: x-large;
 }
 
 @media screen and (max-width:900px) {
@@ -53,4 +55,65 @@
 
 .remove {
   cursor: pointer;
+}
+
+.checkout {
+  margin: 20px;
+  align-items: center;
+  font-size: large;
+}
+
+.cart-total button {
+  padding: 20px;
+  background-color: rgb(229, 226, 221);
+  border: none;
+
+  font-size: x-large;
+  margin-top: 20px;
+}
+
+
+.cart-total button:hover {
+  background-color: rgb(208, 225, 225);
+  transform: scale(1.01);
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: column;
+font-size: large;
+}
+
+.cart-total-div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
+
+.checkout {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.promo {
+  display: flex;
+  margin: 20px 0;
+  /* width: 100%; */
+}
+
+.checkout input {
+  padding: 10px;
+}
+
+.promo-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 20px;
+}
+.promo-button:hover{
+  background-color: #232121;
 }
