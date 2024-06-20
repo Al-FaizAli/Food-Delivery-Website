@@ -1,0 +1,73 @@
+.main {
+    position: fixed;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 800;
+}
+
+.form {
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding: 5vh 5vw;
+    border-radius: 8px;
+    background-color: white;
+    animation: fadeIn 10s;
+    margin-top: -15%;
+    position: fixed;
+}
+
+.form img {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cross-icon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.form input {
+    border: 2px solid black;
+    width: 90%;
+    height: 2vh;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+.createbtn {
+    width: 102%;
+    height: 5vh;
+    font-size: max(1vw, 15px);
+    border-radius: 10px;
+    background-color: rgb(0, 255, 115);
+}
+
+.btn:last-child {
+    color: blue;
+    cursor: pointer;
+    border-bottom: 1px solid blue;
+}
+
+.forgot-password {
+    border-bottom: 1px solid blue;
+    color: blue;
+    position: relative;
+    cursor: pointer;
+}

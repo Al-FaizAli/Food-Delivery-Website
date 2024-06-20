@@ -1,0 +1,20 @@
+.add-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    margin: -10% 20%;
+}
+
+.add-form input,
+textarea,
+select {
+    padding: 10px;
+}
+
+.submit-btn {
+    background-color: #d20404;
+}

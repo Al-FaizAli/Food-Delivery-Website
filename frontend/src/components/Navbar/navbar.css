@@ -1,0 +1,114 @@
+ul {
+    height: 10vh;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    background-color: rgb(247, 243, 239);
+    color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+@media screen and (max-width:900px) {
+    ul {
+        font-size: max(18px, 3vw);
+    }
+}
+
+nav {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+ul li {
+    list-style: none;
+    font-weight: bold;
+}
+
+ul li:hover {
+    transform: scale(0.85);
+}
+
+.name {
+    font-size: 3vw;
+    position: absolute;
+    left: 5vw;
+}
+
+ul button {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: max(20px, 2vw);
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 7px;
+}
+
+button.loginBtn:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px rgba(100, 100, 100, 0.5);
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.home {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+li img {
+    height: 40px;
+    width: 40px;
+}
+
+.userMenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 4rem;
+    right: -2rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    font-size: 25px;
+    font-weight: 0;
+}
+
+.dropdownMenu li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 0;
+    color: rgb(105, 96, 96);
+}
+
+.dropdownMenu li:hover {
+    color: black
+}
+
+.dropdownMenu li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 900px) {
+    .name {
+        display: none;
+    }
+}
