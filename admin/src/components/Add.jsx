@@ -112,9 +112,13 @@ const Add = () => {
         >
           <option value="">Select a category</option>
           <option value="Appetizer">Appetizer</option>
-          <option value="Main Course">Main Course</option>
-          <option value="Dessert">Dessert</option>
           <option value="Beverage">Beverage</option>
+          <option value="Biryani">Biryani</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Main Course">Main Course</option>
+          <option value="Meal">Meal</option>
+          <option value="Salad">Salad</option>
         </select>
         <button type="submit" className="btn submit-btn">
           Add Food
