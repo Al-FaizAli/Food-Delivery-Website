@@ -9,6 +9,7 @@ import { ToastContainer, } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Order from './pages/Orders/Orders.jsx';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder.jsx';
+import Verify from './pages/Verify/Verify.jsx';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         <Route path='/cart' element={<Cart />}></Route>
         <Route path='/orders' element={<Order />}></Route>
         <Route path='/placeOrder' element={<PlaceOrder />}></Route>
+        <Route path='/verify' element={<Verify />}></Route>
       </Routes>
     </div>
   );

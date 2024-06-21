@@ -1,0 +1,21 @@
+.verify {
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+}
+
+.spinner {
+    align-self: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(239, 234, 224);
+    border-top-color: orange;
+    animation: rotate 1s infinite;
+}
+@keyframes rotate {
+    100%{
+        transform:rotate(360deg);
+    }
+}
