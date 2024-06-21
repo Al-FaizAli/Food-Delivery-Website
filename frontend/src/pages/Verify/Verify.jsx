@@ -14,10 +14,10 @@ const Verify = () => {
         else {
             navigate("/")
         }
-    }   
-    useEffect(()=>{
+    }
+    useEffect(() => {
         verifyPayment()
-    },[])
+    }, [])
     return (
         <div className='verify'>
             <div className="spinner">

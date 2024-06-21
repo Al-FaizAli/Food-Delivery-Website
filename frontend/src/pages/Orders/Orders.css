@@ -1,0 +1,41 @@
+/* MyOrders.css */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.order-card {
+    border: 1px solid #b49f9f;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-card p {
+    margin: 10px 0;
+}
+
+.order-items {
+    margin: 10px 0;
+}
+
+.order-items p {
+    margin: 5px 0;
+}
+
+.order-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-card button:hover {
+    background-color: #45a049;
+}

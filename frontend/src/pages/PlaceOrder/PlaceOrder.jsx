@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import './PlaceOrder.css';
+import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext.jsx';
 
 const PlaceOrder = () => {
@@ -15,7 +16,7 @@ const PlaceOrder = () => {
         country: '',
         phone: ''
     });
-
+    // const total = 0;
     const onChangeHandler = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -38,7 +39,7 @@ const PlaceOrder = () => {
         let orderData = {
             address: data,
             items: orderItems,
-            amount: 100, 
+            amount: 0,
         };
 
         try {
@@ -55,6 +56,15 @@ const PlaceOrder = () => {
             alert("There was an error placing your order. Please try again.");
         }
     };
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (!token) {
+            navigate('/cart')
+        }
+        // if (total === 0) {
+        //     navigate('/cart')
+        // }
+    }, [token])
 
     return (
         <div className='placeorder'>
