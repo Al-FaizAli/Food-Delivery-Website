@@ -38,7 +38,7 @@ const PlaceOrder = () => {
         let orderData = {
             address: data,
             items: orderItems,
-            amount: 100, // Ensure this value is correctly calculated
+            amount: 100, 
         };
 
         try {

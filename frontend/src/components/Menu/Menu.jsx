@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Menu.css';
 
-// Import images
 import mealImage from '../../assets/Meal.jpg';
 import saladImage from '../../assets/Salad.jpg';
 import biryaniImage from '../../assets/Biryani.jpg';

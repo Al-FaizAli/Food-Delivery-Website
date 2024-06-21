@@ -4,7 +4,6 @@ import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
-    // const [token, setToken] = useState(localStorage.getItem('token') || '');
     const [token, setToken] = useState('');
     const [cartItems, setCartItems] = useState({})
     const [foodList, setFoodList] = useState([]);

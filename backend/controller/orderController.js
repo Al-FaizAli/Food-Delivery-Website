@@ -14,7 +14,6 @@ const placeOrder = async (req, res) => {
         });
         await newOrder.save();
 
-        // Update user model with an empty cart
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
         const lineItems = req.body.items.map((item) => ({
@@ -23,12 +22,11 @@ const placeOrder = async (req, res) => {
                 product_data: {
                     name: item.name,
                 },
-                unit_amount: item.price * 100 * 80, // Ensure the price calculation is correct
+                unit_amount: item.price * 100 * 80, 
             },
             quantity: item.quantity,
         }));
 
-        // Add delivery charges
         lineItems.push({
             price_data: {
                 currency: "inr",
@@ -40,7 +38,6 @@ const placeOrder = async (req, res) => {
             quantity: 1,
         });
 
-        // Create a Stripe checkout session
         const session = await stripe.checkout.sessions.create({
             line_items: lineItems,
             mode: 'payment',

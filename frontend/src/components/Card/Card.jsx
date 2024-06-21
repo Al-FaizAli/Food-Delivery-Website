@@ -7,7 +7,6 @@ const Card = ({ index, item }) => {
   const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
   const [count, setCount] = useState(0);
 
-  // Sync local count with cartItems from context
   useEffect(() => {
     setCount(cartItems[item._id] || 0);
   }, [cartItems, item._id]);

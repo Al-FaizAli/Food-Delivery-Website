@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json({ limit: '50mb' }))
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // Allow requests from these origins
+    origin: ['http://localhost:5173', 'http://localhost:5174'],
     credentials: true
 }));
 app.use('/images', express.static(path.join(__dirname, 'uploads')));
@@ -32,7 +32,7 @@ app.post('/signup', signUpUser)
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // Specify the destination folder for uploaded files
+        cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}-${file.originalname}`);
