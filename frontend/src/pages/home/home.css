@@ -1,3 +1,37 @@
-h1 {
-    margin: 20px;
+.mobile-app img {
+    width: 20%;
+    height: auto;
+}
+
+.play-app-images {
+    display: flex;
+    gap: 30px;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+@media screen and (max-width:800px) {
+    
+    .mobile-app img {
+        width: 40%;
+        height: auto;
+    }
+}
+
+.mobile-app {
+    color: #3D4046;
+    width: 100%;
+    padding: 20px;
+    background-color: #F0F0F5;
+    padding: 20px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+footer {
+    height: 10vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-content: center;
 }

@@ -7,6 +7,13 @@ dotenv.config();
 const logInUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+        if (email == process.env.ADMIN_EMAIL && password == process.env.ADMIN_PASSWORD) {
+            return res.json({
+                success: true,
+                admin: true,
+                message: 'Admin LogIn'
+            })
+        }
         const user = await userModel.findOne({ email: email })
         if (!user) {
             return res.json({
@@ -26,7 +33,6 @@ const logInUser = async (req, res) => {
         res.json({
             success: true,
             message: 'User Logged In',
-            // user: user,
             token: token
         })
     }

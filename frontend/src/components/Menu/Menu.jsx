@@ -36,7 +36,7 @@ const Menu = ({ category, setCategory }) => {
 
     return (
         <div className='parent-div'>
-            <h1>Menu</h1>
+            <h1>Explore Menu</h1>
             <div className='parent-card'>
                 {menu_list.map((item, index) => (
                     <div className='card' key={index}>

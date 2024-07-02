@@ -5,10 +5,8 @@
   overflow: hidden;
   transition: transform 0.2s;
   width: 300px;
-  margin: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   z-index: 1;
 }

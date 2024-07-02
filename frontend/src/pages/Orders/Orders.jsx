@@ -15,7 +15,7 @@ const MyOrders = () => {
         }
     }, [token])
     return (
-        <div>
+        <div className='orders-container'>
             {data.map((order, index) => (
                 <div key={index} className="order-card">
                     <p>Order #{index + 1}</p>

@@ -12,12 +12,15 @@ const Items = ({ category }) => {
         fetchItems();
     }, []);
     return (
-        <div className="parent-item">
-            {items.map((item, index) => {
-                if (category === "All" || category === item.category) {
-                    return <Card key={index} item={item} />
-                }
-            })}
+        <div className='parent-div'>
+            <h1>Explore Food Items</h1>
+            <div className="parent-item">
+                {items.map((item, index) => {
+                    if (category === "All" || category === item.category) {
+                        return <Card key={index} item={item} />
+                    }
+                })}
+            </div>
         </div>
 
     )

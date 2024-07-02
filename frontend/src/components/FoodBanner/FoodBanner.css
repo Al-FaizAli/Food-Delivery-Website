@@ -1,0 +1,19 @@
+.food-banner {
+    background-image:url('../../assets/foodBanner.webp'); 
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    /* width: 100%; */
+    color: rgb(255, 166, 0);
+}

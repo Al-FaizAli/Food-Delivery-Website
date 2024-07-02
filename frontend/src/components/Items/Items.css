@@ -3,6 +3,11 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: flex-start;
-    padding: 20px;
-    /* background-color: #f4f4f4; */
+    margin-top: 20px;
+}
+
+@media screen and (max-width:740px) {
+    .parent-item {
+        justify-content: center;
+    }
 }

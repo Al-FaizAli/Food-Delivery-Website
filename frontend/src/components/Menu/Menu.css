@@ -1,6 +1,19 @@
+.parent-div{
+    margin: 20px 20px;
+}
+.parent-card {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.parent-card::-webkit-scrollbar {
+    width: 0;
+}
+
 .card img {
     box-sizing: border-box;
-    margin: 3vh;
     flex: 0 0 150px;
     height: 100px;
     background-color: rgb(198, 121, 27);
@@ -11,22 +24,10 @@
     text-align: center;
 }
 
-.parent-card {
-    display: flex;
-    overflow-x: auto;
-}
-.parent-div{
-    margin-top: 10vh;
-}
-.parent-card::-webkit-scrollbar {
-    width: 0;
-}
-
 .Active {
-    margin: 5vh;
     flex: 0 0 200px;
     height: 200px;
     background-color: rgb(0, 0, 0);
     border-radius: 100%;
-    border: 5px solid rgb(184, 210, 15);
+    border: 5px solid greenyellow;
 }
