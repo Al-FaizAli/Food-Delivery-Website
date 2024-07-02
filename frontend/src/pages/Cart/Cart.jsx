@@ -5,7 +5,8 @@ import { StoreContext } from '../../context/StoreContext';
 
 const Cart = () => {
   const { cartItems, foodList, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   return (
     <div className='cart'>
       <div className='cart-heading'>
@@ -28,7 +29,7 @@ const Cart = () => {
                 <p>{item.price * cartItems[item._id]}</p>
                 <p className='remove' onClick={() => removeFromCart(item._id)}>X</p>
               </div>
-            )
+            );
           }
           return null;
         })}
@@ -41,7 +42,7 @@ const Cart = () => {
           <div className='cart-total-div'><p>Total</p><p>${getTotalCartAmount() > 0 ? getTotalCartAmount() + 2 : 0}</p></div>
           <button onClick={() => navigate('/placeOrder')}>Proceed To Checkout</button>
         </div>
-        <div>
+        <div className='promo-section'>
           <p>If you have a promo code, Enter it here</p>
           <div className='promo'>
             <input placeholder='Enter promo code' />
