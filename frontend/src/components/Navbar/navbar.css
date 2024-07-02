@@ -65,7 +65,7 @@ ul li:hover {
 }
 
 .name {
-    font-size: max(22px,2vw);
+    font-size: max(22px, 2vw);
     position: absolute;
     left: 5vw;
     color: rgb(255, 145, 0);
