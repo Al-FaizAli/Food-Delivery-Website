@@ -15,24 +15,24 @@ const StoreContextProvider = ({ children }) => {
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
         if (token) {
-            await axios.post('http://localhost:5000/addToCart', { itemId }, { headers: { token } });
+            await axios.post('https://food-delivery-website-backend-poh1.onrender.com/addToCart', { itemId }, { headers: { token } });
         }
     };
 
     const removeFromCart = async (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
         if (token) {
-            await axios.post('http://localhost:5000/removeFromCart', { itemId }, { headers: { token } });
+            await axios.post('https://food-delivery-website-backend-poh1.onrender.com/removeFromCart', { itemId }, { headers: { token } });
         }
     };
 
     const fetchFoodList = async () => {
-        const response = await axios.post('http://localhost:5000/getFoods');
+        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
         setFoodList(response.data.items);
     };
 
     const loadCartData = async (token) => {
-        const response = await axios.post('http://localhost:5000/getCart', {}, { headers: { token } });
+        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getCart', {}, { headers: { token } });
         setCartItems(response.data.cartData);
     };
 

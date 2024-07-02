@@ -1,6 +1,5 @@
 import React from 'react';
 import './FoodBanner.css';
-import foodBanner from '../../assets/foodBanner.webp';
 
 const FoodBanner = () => {
     return (

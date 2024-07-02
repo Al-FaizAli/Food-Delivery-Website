@@ -25,7 +25,7 @@ const Card = ({ index, item }) => {
 
   return (
     <div key={index} className="item-card">
-      <img src={`http://localhost:5000/images/${item.image}`} alt={item.name} className="item-image" />
+      <img src={`https://food-delivery-website-backend-poh1.onrender.com/images/${item.image}`} alt={item.name} className="item-image" />
       <div className="item-content">
         <h3>{item.name}</h3>
         <p>{item.description}</p>

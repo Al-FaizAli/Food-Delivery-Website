@@ -28,12 +28,12 @@ const Login = ({ setSignup }) => {
     e.preventDefault();
     const endpoint = login ? 'login' : 'signup';
     try {
-      const response = await axios.post(`http://localhost:5000/${endpoint}`, formData);
+      const response = await axios.post(`https://food-delivery-website-backend-poh1.onrender.com/${endpoint}`, formData);
 
       if (response.data.admin) {
         toast.success(response.data.message);
         setSignup(false);
-        window.location.href = 'http://localhost:5174/'; // Navigate to external
+        window.location.href = 'https://food-delivery-website-admin-tr5c.onrender.com';
       }
       else if (response.data.success) {
         toast.success(response.data.message);

@@ -43,7 +43,7 @@ const Add = () => {
     formDataToSend.append('image', image);
 
     try {
-      const response = await axios.post('http://localhost:5000/addFood', formDataToSend, {
+      const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/addFood', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

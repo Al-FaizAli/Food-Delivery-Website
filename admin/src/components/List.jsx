@@ -6,7 +6,7 @@ const Get = () => {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const response = await axios.post('http://localhost:5000/getFoods');
+    const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
     setItems(response.data.items);
   };
 
@@ -16,7 +16,7 @@ const Get = () => {
 
   const handleClick = async (itemId) => {
     try {
-      const response = await axios.post(`http://localhost:5000/deleteFood`, { id: itemId });
+      const response = await axios.post(`https://food-delivery-website-backend-poh1.onrender.com/deleteFood`, { id: itemId });
       await fetchItems();
       if (response.data.success) {
         toast.success(response.data.message)
@@ -45,7 +45,7 @@ const Get = () => {
         <tbody>
           {items.map((item, index) => (
             <tr key={index}>
-              <td><img src={`http://localhost:5000/images/${item.image}`} alt={item.name} className="item-image" /></td>
+              <td><img src={`https://food-delivery-website-backend-poh1.onrender.com/images/${item.image}`} alt={item.name} className="item-image" /></td>
               <td>{item.name}</td>
               <td>{item.description}</td>
               <td>{item.category}</td>

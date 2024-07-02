@@ -6,7 +6,7 @@ const MyOrders = () => {
     const [data, setData] = useState([])
     const { token } = useContext(StoreContext)
     const fetchOrders = async () => {
-        const response = await axios.post("http://localhost:5000/userOrders", {}, { headers: {token} })
+        const response = await axios.post("https://food-delivery-website-backend-poh1.onrender.com/userOrders", {}, { headers: {token} })
         setData(response.data.data)
     }
     useEffect(() => {

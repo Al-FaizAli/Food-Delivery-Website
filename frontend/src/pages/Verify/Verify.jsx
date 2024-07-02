@@ -7,7 +7,7 @@ const Verify = () => {
     const orderId = searchParams.get("orderId")
     const navigate = useNavigate()
     const verifyPayment = async () => {
-        const response = await axios.post("http://localhost:5000/verifyOrderPayment", { success, orderId })
+        const response = await axios.post("https://food-delivery-website-backend-poh1.onrender.com/verifyOrderPayment", { success, orderId })
         if (response.data.success) {
             navigate("/orders")
         }

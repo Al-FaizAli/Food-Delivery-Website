@@ -5,7 +5,7 @@ import './Items.css'
 const Items = ({ category }) => {
     const [items, setItems] = useState([]);
     const fetchItems = async () => {
-        const response = await axios.post('http://localhost:5000/getFoods');
+        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
         setItems(response.data.items);
     };
     useEffect(() => {
