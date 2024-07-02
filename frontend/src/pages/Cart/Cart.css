@@ -95,7 +95,12 @@ font-size: large;
   display: flex;
   width: 100%;
   justify-content: space-around;
-
+}
+@media screen and (max-width:650px) {
+  .checkout{
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
 .promo {

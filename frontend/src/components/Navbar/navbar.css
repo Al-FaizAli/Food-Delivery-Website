@@ -4,12 +4,13 @@ ul {
     justify-content: center;
     align-items: center;
     gap: 5vw;
-    background-color: rgb(247, 243, 239);
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 5px;
     position: sticky;
     width: 100%;
     top: 0px;
+    box-shadow: 0 0 5px 0 black;
 }
 
 @media screen and (max-width: 400px) {

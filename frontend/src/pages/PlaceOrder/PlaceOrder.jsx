@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext.jsx';
 
 const PlaceOrder = () => {
-    const { token, foodList, cartItems } = useContext(StoreContext);
+
+    const { token, foodList, cartItems, getTotalCartAmount } = useContext(StoreContext);
     const [data, setData] = useState({
         fullName: '',
         email: '',
@@ -16,7 +17,6 @@ const PlaceOrder = () => {
         country: '',
         phone: ''
     });
-    // const total = 0;
     const onChangeHandler = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -58,12 +58,9 @@ const PlaceOrder = () => {
     };
     const navigate = useNavigate()
     useEffect(() => {
-        if (!token) {
+        if (!token || !getTotalCartAmount()) {
             navigate('/cart')
         }
-        // if (total === 0) {
-        //     navigate('/cart')
-        // }
     }, [token])
 
     return (
@@ -86,9 +83,9 @@ const PlaceOrder = () => {
                 </div>
                 <div className='cart-total'>
                     <h2>Cart Totals</h2>
-                    <div className='cart-total-div'><p>Subtotal</p><p>${10}</p></div>
-                    <div className='cart-total-div'><p>Delivery Fee</p><p>${2}</p></div>
-                    <div className='cart-total-div'><p>Total</p><p>${12}</p></div>
+                    <div className='cart-total-div'><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
+                    <div className='cart-total-div'><p>Delivery Fee</p><p>${getTotalCartAmount() > 0 ? 2 : 0}</p></div>
+                    <div className='cart-total-div'><p>Total</p><p>${getTotalCartAmount() > 0 ? getTotalCartAmount() + 2 : 0}</p></div>
                     <button type='submit'>Proceed To Payment</button>
                 </div>
             </form>
