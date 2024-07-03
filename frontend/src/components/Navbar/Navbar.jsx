@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
-import './Navbar.css';
+import './navbar.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Login from '../Login/Login';
 import cartimg from './cart.svg';
