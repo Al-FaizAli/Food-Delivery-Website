@@ -3,6 +3,7 @@ import './Add.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+export const url = 'https://food-delivery-website-backend-poh1.onrender.com'
 const Add = () => {
   const [data, setData] = useState({
     name: '',
@@ -43,7 +44,7 @@ const Add = () => {
     formDataToSend.append('image', image);
 
     try {
-      const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/addFood', formDataToSend, {
+      const response = await axios.post(`${url}/addFood`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

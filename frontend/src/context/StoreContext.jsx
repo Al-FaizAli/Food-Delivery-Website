@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
+    const url='https://food-delivery-website-backend-poh1.onrender.com'
     const [token, setToken] = useState('');
     const [cartItems, setCartItems] = useState({});
     const [foodList, setFoodList] = useState([]);

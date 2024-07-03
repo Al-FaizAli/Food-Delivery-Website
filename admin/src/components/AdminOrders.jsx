@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './AdminOrders.css';
+import { url } from './Add';
 
 const AdminOrders = () => {
   const [data, setData] = useState([]);
 
   const fetchOrders = async () => {
-    const response = await axios.get("https://food-delivery-website-backend-poh1.onrender.com/listAllOrders");
+    const response = await axios.get(`${url}/listAllOrders`);
     setData(response.data.data);
   };
   const statusHandler = async (event, orderId) => {
-    const response = await axios.post("https://food-delivery-website-backend-poh1.onrender.com/updateStatus", { orderId, status: event.target.value });
+    const response = await axios.post(`${url}/updateStatus`, { orderId, status: event.target.value });
     if (response.data.success) {
       await fetchOrders()
     }

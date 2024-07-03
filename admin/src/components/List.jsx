@@ -2,11 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './List.css';
 import { toast } from 'react-toastify';
+import { url } from './Add';
 const Get = () => {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
+    const response = await axios.post(`${url}/getFoods`);
     setItems(response.data.items);
   };
 
@@ -16,7 +17,7 @@ const Get = () => {
 
   const handleClick = async (itemId) => {
     try {
-      const response = await axios.post(`https://food-delivery-website-backend-poh1.onrender.com/deleteFood`, { id: itemId });
+      const response = await axios.post(`${url}/deleteFood`, { id: itemId });
       await fetchItems();
       if (response.data.success) {
         toast.success(response.data.message)
@@ -45,7 +46,7 @@ const Get = () => {
         <tbody>
           {items.map((item, index) => (
             <tr key={index}>
-              <td><img src={`https://food-delivery-website-backend-poh1.onrender.com/images/${item.image}`} alt={item.name} className="item-image" /></td>
+              <td><img src={`${url}/images/${item.image}`} alt={item.name} className="item-image" /></td>
               <td>{item.name}</td>
               <td>{item.description}</td>
               <td>{item.category}</td>
