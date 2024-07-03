@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from '../Card/Card';
 import './Items.css'
+import { StoreContext } from '../../context/StoreContext';
+
 const Items = ({ category }) => {
+    const { url } = useContext(StoreContext);
     const [items, setItems] = useState([]);
     const fetchItems = async () => {
-        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
+        const response = await axios.post(`${url}/getFoods`);
         setItems(response.data.items);
     };
     useEffect(() => {

@@ -5,18 +5,16 @@ import cross from './cross.png';
 import { toast } from 'react-toastify';
 import { StoreContext } from '../../context/StoreContext';
 import { RiAdminFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
 const Login = ({ setSignup }) => {
   const [login, setLogin] = useState(true);
   const [adminLogin, setAdminLogin] = useState(false);
-  const { setToken } = useContext(StoreContext);
+  const { setToken,url } = useContext(StoreContext);
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
     email: '',
     password: ''
   });
-  const navigate = useNavigate()
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -28,7 +26,7 @@ const Login = ({ setSignup }) => {
     e.preventDefault();
     const endpoint = login ? 'login' : 'signup';
     try {
-      const response = await axios.post(`https://food-delivery-website-backend-poh1.onrender.com/${endpoint}`, formData);
+      const response = await axios.post(`${url}/${endpoint}`, formData);
 
       if (response.data.admin) {
         toast.success(response.data.message);

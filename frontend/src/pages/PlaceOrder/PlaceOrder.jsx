@@ -6,7 +6,7 @@ import { StoreContext } from '../../context/StoreContext.jsx';
 
 const PlaceOrder = () => {
 
-    const { token, foodList, cartItems, getTotalCartAmount } = useContext(StoreContext);
+    const { token, foodList, cartItems, getTotalCartAmount, url } = useContext(StoreContext);
     const [data, setData] = useState({
         fullName: '',
         email: '',
@@ -43,7 +43,7 @@ const PlaceOrder = () => {
         };
 
         try {
-            let response = await axios.post("https://food-delivery-website-backend-poh1.onrender.com/placeOrder", orderData, { headers: { token } });
+            let response = await axios.post(`${url}/placeOrder`, orderData, { headers: { token } });
             console.log(response);
             if (response.data.success) {
                 const { session_url } = response.data;

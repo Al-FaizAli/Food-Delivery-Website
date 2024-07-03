@@ -11,7 +11,7 @@ const Navbar = () => {
     const [signup, setSignup] = useState(false);
     const { token, setToken } = useContext(StoreContext);
     const [userMenuVisible, setUserMenuVisible] = useState(false);
-    const [isHamburgerOpen, setIsHamburgerOpen] = useState(false); // New state for hamburger menu
+    const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isMobileView, setIsMobileView] = useState(window.innerWidth < 400);
 
     const navigate = useNavigate();

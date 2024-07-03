@@ -4,7 +4,7 @@ import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 import { StoreContext } from '../../context/StoreContext';
 
 const Card = ({ index, item }) => {
-  const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
+  const { addToCart, removeFromCart, cartItems, url } = useContext(StoreContext);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Card = ({ index, item }) => {
 
   return (
     <div key={index} className="item-card">
-      <img src={`https://food-delivery-website-backend-poh1.onrender.com/images/${item.image}`} alt={item.name} className="item-image" />
+      <img src={`${url}/images/${item.image}`} alt={item.name} className="item-image" />
       <div className="item-content">
         <h3>{item.name}</h3>
         <p>{item.description}</p>
