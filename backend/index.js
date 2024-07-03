@@ -53,9 +53,9 @@ app.post('/getCart', authMiddleware, getCart)
 //PlaceOrder
 app.post("/placeOrder", authMiddleware, placeOrder)
 app.post("/verifyOrderPayment", verifyOrder)
-app.post("/userOrders",authMiddleware,userOrders)
-app.get("/listAllOrders",listAllOrders)
-app.post("/updateStatus",updateStatus)
+app.post("/userOrders", authMiddleware, userOrders)
+app.get("/listAllOrders", listAllOrders)
+app.post("/updateStatus", updateStatus)
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`App running on port http://localhost:${PORT}`)
