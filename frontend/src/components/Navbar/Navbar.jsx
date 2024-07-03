@@ -76,7 +76,7 @@ const Navbar = () => {
             {signup && <Login setSignup={setSignup} />}
             <nav>
                 <ul className="navbar">
-                    <li className="name" onClick={()=>navigate('/')}>FoodCorner.</li>
+                    <li className="name" onClick={() => navigate('/')}>FoodCorner.</li>
                     {isMobileView ? (
                         <>
                             <li className="hamburger" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}>
