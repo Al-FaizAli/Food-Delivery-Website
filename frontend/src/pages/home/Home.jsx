@@ -14,15 +14,12 @@ const Home = () => {
             <Menu category={category} setCategory={setCategory} />
             <Items category={category} />
             <div className='mobile-app'>
-                <h1>For better experience,download the FoodCorner app now</h1>
+                <h3>For better experience,download the FoodCorner app now</h3>
                 <div className='play-app-images'>
                     <img src={PlayStore} alt='' />
                     <img src={AppStore} alt='' />
                 </div>
             </div>
-            <footer>
-                <p>Copyright © 2024 All Rights Reserved</p>
-            </footer>
         </div>
     )
 }

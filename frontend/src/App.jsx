@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import MyOrders from './pages/Orders/Orders.jsx';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder.jsx';
 import Verify from './pages/Verify/Verify.jsx';
+import Footer from './components/Footer/Footer.jsx';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         <Route path='/placeOrder' element={<PlaceOrder />}></Route>
         <Route path='/verify' element={<Verify />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

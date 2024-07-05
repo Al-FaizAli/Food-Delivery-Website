@@ -5,6 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
     const url = 'https://food-delivery-website-backend-poh1.onrender.com'
+    // const url = 'http://localhost:5000'
     const [token, setToken] = useState('');
     const [cartItems, setCartItems] = useState({});
     const [foodList, setFoodList] = useState([]);
@@ -16,24 +17,24 @@ const StoreContextProvider = ({ children }) => {
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
         if (token) {
-            await axios.post('https://food-delivery-website-backend-poh1.onrender.com/addToCart', { itemId }, { headers: { token } });
+            await axios.post(`${url}/addToCart`, { itemId }, { headers: { token } });
         }
     };
 
     const removeFromCart = async (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
         if (token) {
-            await axios.post('https://food-delivery-website-backend-poh1.onrender.com/removeFromCart', { itemId }, { headers: { token } });
+            await axios.post(`${url}/removeFromCart`, { itemId }, { headers: { token } });
         }
     };
 
     const fetchFoodList = async () => {
-        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getFoods');
+        const response = await axios.post(`${url}/getFoods`);
         setFoodList(response.data.items);
     };
 
     const loadCartData = async (token) => {
-        const response = await axios.post('https://food-delivery-website-backend-poh1.onrender.com/getCart', {}, { headers: { token } });
+        const response = await axios.post(`${url}/getCart`, {}, { headers: { token } });
         setCartItems(response.data.cartData);
     };
 

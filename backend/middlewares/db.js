@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
-// MongoDB Connection
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/FoodApp';
+
 export default await mongoose.connect(MONGODB_URI)
     .then(() => { console.log("db connected") })
     .catch((error) => { console.log(error) })
