@@ -26,7 +26,7 @@ app.use(cors({
     origin: ['http://localhost:5173', 'http://localhost:5174', 'https://food-delivery-website-frontend-0xby.onrender.com', 'https://food-delivery-website-admin-tr5c.onrender.com'],
     credentials: true
 }));
-app.use('/images', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('/', (req, res) => {
     res.send("Hello World")
