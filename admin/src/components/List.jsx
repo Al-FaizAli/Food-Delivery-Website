@@ -30,7 +30,7 @@ const Get = () => {
     }
   };
   return (
-    <div>
+    <div className='food-list-admin'>
       <h1>List Food Items</h1>
       <table className="food-table">
         <thead>

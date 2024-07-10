@@ -10,7 +10,7 @@ nav ul {
     position: sticky;
     width: 100%;
     top: 0px;
-    box-shadow: 0 0 5px 0 black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
 }
 
