@@ -29,7 +29,7 @@ const StoreContextProvider = ({ children }) => {
     };
 
     const fetchFoodList = async () => {
-        const response = await axios.post(`${url}/getFoods`);
+        const response = await axios.post(url + "/getFoods");
         setFoodList(response.data.items);
     };
 

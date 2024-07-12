@@ -7,8 +7,6 @@ import addFood from './middlewares/AddFood.js'
 import multer from 'multer';
 import getAllFood from './middlewares/GetAllFood.js'
 import deleteFood from './middlewares/DeleteFood.js'
-import path from 'path'
-import { fileURLToPath } from 'url';
 import { addToCart, getCart, removeFromCart } from './controller/cartControllser.js'
 import { authMiddleware } from './middlewares/auth.js'
 import { listAllOrders, placeOrder, updateStatus, userOrders, verifyOrder } from './controller/orderController.js'
@@ -18,34 +16,29 @@ dotenv.config();
 
 
 const app = express()
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use(express.json({ limit: '50mb' }))
+app.use(express.json())
 
 app.use(cors({
     origin: ['http://localhost:5173', 'http://localhost:5174', 'https://food-delivery-website-frontend-0xby.onrender.com', 'https://food-delivery-website-admin-tr5c.onrender.com'],
     credentials: true
 }));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.get('/', (req, res) => {
-    res.send("Hello World")
-})
+app.use('/images', express.static("uploads"));
+
+//user
 app.post('/login', logInUser)
 app.post('/signup', signUpUser)
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/');
-    },
+    destination: "uploads",
     filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`);
+        return cb(null, `${Date.now()}${file.originalname}`);
     }
 });
 
 const upload = multer({ storage: storage });
 //Admin 
-app.post('/addFood', upload.single('image'), addFood);
+app.post('/addFood', upload.single("image"), addFood);
 app.post('/getFoods', getAllFood)
 app.post('/deleteFood', deleteFood)
 

@@ -11,7 +11,7 @@ const Add = () => {
     price: '',
     category: '',
   });
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(false);
   const [imagePreview, setImagePreview] = useState('');
 
   const handleChange = (e) => {
