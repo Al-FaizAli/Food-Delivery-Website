@@ -25,7 +25,7 @@ const Card = ({ index, item }) => {
 
   return (
     <div key={index} className="item-card">
-      <img src={`${url}/uploads/${item.image}`} alt={item.name} className="item-image" />
+      <img src={`${url}/images/${item.image}`} alt={item.name} className="item-image" />
       <div className="item-content">
         <h3>{item.name}</h3>
         <p>{item.description}</p>
