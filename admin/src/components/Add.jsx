@@ -3,7 +3,7 @@ import './Add.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-export const url = 'https://food-delivery-website-backend-poh1.onrender.com'
+export const url = 'https://tomato-backend-f4y1.onrender.com'
 // export const url = 'https://food-delivery-website-g8pm.vercel.app/'
 const Add = () => {
   const [data, setData] = useState({
