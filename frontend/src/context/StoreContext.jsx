@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
-    const url = 'https://food-delivery-website-backend-poh1.onrender.com'
+    const url = 'https://tomato-backend-f4y1.onrender.com'
     // const url = 'https://food-delivery-website-g8pm.vercel.app/'
     // const url = 'http://localhost:5000'
     const [token, setToken] = useState('');
